@@ -50,10 +50,10 @@ public class WebSecurityConfig {
         return new JdbcUserDetailsManager(dataSource);
     }
 
-    @Bean
+/*    @Bean
     public static PasswordEncoder getPasswordEncorder(){
         return NoOpPasswordEncoder.getInstance();
-    }
+    }*/
 
 
 }
