@@ -31,7 +31,13 @@ public class WebSecurityConfig {
                         .requestMatchers("/orders").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
-                .httpBasic(withDefaults());
+                .formLogin( (form) -> form.loginPage("/login")
+                        .failureUrl("/login?error")
+                        .permitAll())
+                .logout((form) -> form.clearAuthentication(true)
+                        .invalidateHttpSession(true)
+                        .logoutSuccessUrl("/login?logout")
+                        .permitAll());
         return http.build();
     }
 
