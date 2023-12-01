@@ -13,16 +13,16 @@ CREATE TABLE orders(
     foreign key (customer_id) references customers(customer_id)
 );
 
-CREATE TABLE users (
+CREATE TABLE users_old (
     username varchar_ignorecase(50) not null primary key,
     password varchar_ignorecase(500) not null,
     enabled boolean not null
 );
 
- CREATE TABLE authorities (
+ CREATE TABLE authorities_old (
      username varchar_ignorecase(50) not null,
      authority varchar_ignorecase(50) not null,
-     constraint fk_authorities_users foreign key(username) references users(username)
+     constraint fk_authorities_users foreign key(username) references users_old(username)
  );
 
- CREATE UNIQUE INDEX ix_auth_username on authorities(username,authority);
+ CREATE UNIQUE INDEX ix_auth_username on authorities_old(username,authority);

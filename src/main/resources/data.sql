@@ -10,9 +10,9 @@ INSERT INTO orders (customer_id, order_info) values ((SELECT customer_id FROM cu
 INSERT INTO orders (customer_id, order_info) values ((SELECT customer_id FROM customers where name = 'Acme'), '3000 Widgets');
 INSERT INTO orders (customer_id, order_info) values ((SELECT customer_id FROM customers where name = 'Callahan Auto'), '200 Widgets');
 
-INSERT INTO users (username, password, enabled) values('user', '{bcrypt}$2a$10$2VuuG7NKl7FLJyk0cp/OK.0VlBAfnz8uijD3beCjRvaVVdfpHxC3i', true);
-INSERT INTO users (username, password, enabled) values('admin', '{bcrypt}$2a$10$2VuuG7NKl7FLJyk0cp/OK.0VlBAfnz8uijD3beCjRvaVVdfpHxC3i', true);
+INSERT INTO users_old (username, password, enabled) values('user', '{bcrypt}$2a$10$2VuuG7NKl7FLJyk0cp/OK.0VlBAfnz8uijD3beCjRvaVVdfpHxC3i', true);
+INSERT INTO users_old (username, password, enabled) values('admin', '{bcrypt}$2a$10$2VuuG7NKl7FLJyk0cp/OK.0VlBAfnz8uijD3beCjRvaVVdfpHxC3i', true);
 
-INSERT INTO authorities(username, authority) values ('user', 'ROLE_USER');
-INSERT INTO authorities(username, authority) values ('admin', 'ROLE_ADMIN');
-INSERT INTO authorities(username, authority) values ('admin', 'ROLE_USER');
+INSERT INTO authorities_old(username, authority) values ('user', 'ROLE_USER');
+INSERT INTO authorities_old(username, authority) values ('admin', 'ROLE_ADMIN');
+INSERT INTO authorities_old(username, authority) values ('admin', 'ROLE_USER');
